@@ -86,7 +86,42 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
-		testFunctions();
+		//old main as a method so i can try to make a menu
+		//testFunctions();
+		String input;
+		Scanner userInput = new Scanner(System.in);
+		
+		System.out.println("Welcome to set calculator 3000");
+		System.out.println("To modify or create a single set, press 1");
+		System.out.println("To compare more than one set, press 2, or q to quit.");
+		input = userInput.nextLine();
+		
+		while (input != "q") {
+		switch (input) {
+		case "q": 
+			System.exit(0);
+		case "1": 
+			System.out.println();
+			System.out.println();
+			System.out.println("A: modify a set.");
+			System.out.println("B: Create a set.");
+			break;
+		case "2":
+			System.out.println();
+			System.out.println();
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			}//end switch
+		}//end while
 		
 		
 		
