@@ -31,6 +31,18 @@ public class Main {
 		System.out.println("Union(" + firstSet.getName() + "," + secondSet.getName() + ") = " + newVector);
 	}
 	
+	public static void difference(classSets firstSet, classSets secondSet) {
+		//Make 2 vectors to get values from, and make set the intersection to newVector.
+		Vector<Character> firstOne = firstSet.getSet();
+		Vector<Character> secondOne = secondSet.getSet();
+		Vector<Character> newVector = new Vector<Character>();
+		
+		// use for loop to add values to new vector for intersection
+		firstOne.removeAll(secondOne);
+		
+		System.out.println("Difference(" + firstSet.getName() + "," + secondSet.getName() + ") = " + firstOne);
+	}
+	
 	public static void isSubset(classSets firstSet, classSets secondSet) {
 		//Make 2 vectors to compare.
 		Vector<Character> firstOne = firstSet.getSet();
@@ -73,6 +85,7 @@ public class Main {
 				
 				//Test various methods and stuff.
 				equals(set1, set2);
+				difference(set1, set2);
 				isSubset(set1, set2);
 				isSubset(set2, set1);
 				System.out.println();	
