@@ -31,6 +31,46 @@ public class Main {
 		System.out.println("Union(" + firstSet.getName() + "," + secondSet.getName() + ") = " + newVector);
 	}
 	
+	public static void intersection(classSets firstSet, classSets secondSet) {
+		//Make 2 vectors to get values from, and make set the intersection to newVector.
+		Vector<Character> firstOne = firstSet.getSet();
+		Vector<Character> secondOne = secondSet.getSet();
+		Vector<Character> newVector = new Vector<Character>();
+		
+		// use for loop to add values to new vector for intersection
+		for(int i = 0; i < firstOne.size(); i++) {
+			for(int j = 0; j < secondOne.size(); j++) {
+				if (firstOne.get(i) == secondOne.get(j)) {
+					newVector.add(firstOne.get(i));
+				}
+			}
+		}
+		
+		System.out.println("Intersection(" + firstSet.getName() + "," + secondSet.getName() + ") = " + newVector);
+	}
+
+	public static void difference(classSets firstSet, classSets secondSet) {
+		//Make 2 vectors to get values from, and make set the intersection to newVector.
+		Vector<Character> firstOne = firstSet.getSet();
+		Vector<Character> secondOne = secondSet.getSet();
+		Vector<Character> newVector = new Vector<Character>();
+		
+		// use for loop to add values to new vector for intersection
+		firstOne.removeAll(secondOne);
+		/*for(int i = 0; i < firstOne.size(); i++) {
+			for(int j = 0; j < secondOne.size(); j++) {
+				if (firstOne.get(i) == secondOne.get(j)) {
+					continue;
+				}
+				else {
+					newVector.add(firstOne.get(i));
+				}
+			}
+		}*/
+		
+		System.out.println("Difference(" + firstSet.getName() + "," + secondSet.getName() + ") = " + firstOne);
+	}
+	
 	public static void isSubset(classSets firstSet, classSets secondSet) {
 		//Make 2 vectors to compare.
 		Vector<Character> firstOne = firstSet.getSet();
@@ -78,6 +118,8 @@ public class Main {
 				System.out.println();	
 				
 				union(set1, set2);
+				intersection(set1, set2);
+				difference(set1, set2);
 				System.out.println();	
 		
 	}
